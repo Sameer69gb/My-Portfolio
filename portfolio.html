@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/zBB0nCFv/Gemini-Generated-Image-imhsb2imhsb2imhs.png">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+      background-attachment: fixed;
+      background: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%);
+      line-height: 1.6;
+      color: #22223b;
+    }
+
+    nav {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    header {
+
+      color: #fff;
+      padding: 1rem 0;
+      background: linear-gradient(135deg, #4a4e69, #22223b, #9a8c98);
+    }
+
+
+    .logo img {
+      border: 2px solid white;
+      width: 20vw;
+      height: 20vw;
+      max-width: 150px;
+      max-height: 150px;
+      border-radius: 50%;
+      /* height: auto; */
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+
+    }
+
+    .logo img:hover {
+      transform: scale(1.05) rotate(5deg);
+    }
+
+    nav h1 {
+      font-size: 2vw;
+      /* max-font-size: 24px; */
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #fff;
+      transition: color 0.5s ease-in-out;
+    }
+
+    nav ul li a:hover {
+      text-decoration-color: #eacdc2;
+      color: #c9ada7;
+      text-decoration: underline;
+
+    }
+
+    section {
+      max-width: 900px;
+      background: #fff;
+      margin: 3rem auto;
+      padding: 2rem;
+      width: 95%;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px rgba(34, 34, 59, 0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(34, 34, 59, 0.15);
+      cursor: pointer;
+
+    }
+
+    section h2 {
+      color: #22223b;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .education {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .projects {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .edu-card {
+      background: #f3e9e3;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      min-width: 220px;
+      flex: 1;
+      box-shadow: 0 1px 6px rgba(34, 34, 59, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card {
+      background: #f3e9e3;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      min-width: 220px;
+      flex: 1;
+      box-shadow: 0 1px 6px rgba(34, 34, 59, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .edu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(34, 34, 59, 0.15);
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      cursor: pointer;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(34, 34, 59, 0.15);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .skills-list li {
+      background: #4a4e69;
+      padding: 0.4rem 1rem;
+      border-radius: 1rem;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .skills-list li:hover {
+      background: #9a8c98;
+      cursor: pointer;
+      transform: scale(1.05);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      color: black;
+
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: #4a4e69;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .project-link:hover {
+      background: #9a8c98;
+      transform: scale(1.05);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      color: black;
+    }
+
+    .contact-link img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 0.5rem;
+      color: #22223b;
+      font-weight: 400;
+    }
+
+    .contact-link:hover {
+      color: #4a4e69;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      background: #22223b;
+      color: #fff;
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+
+    .social-link {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+    }
+
+    .social-link a img {
+      height: 35px;
+      width: 35px;
+      filter: invert(1);
+      transition: transform 0.4s;
+    }
+
+    .social-link a img:hover {
+      transform: scale(1.2);
+    }
+
+    /* resume css */
+    .resume {
+      background: #4a4e69;
+      padding: 0.4rem 1rem;
+      border: none;
+      border-radius: 1rem;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      transition: background 0.3s, transform 0.3s;
+      z-index: 999;
+      bottom: 20px;
+      right: 20px;
+      position: fixed;
+    }
+
+    .resume:hover {
+      background: #9a8c98;
+      cursor: pointer;
+      transform: scale(1.05);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      color: black;
+    }
+
+
+
+    /* for small screen*/
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .logo {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .logo img {
+        width: 25vw;
+        max-width: 100px;
+      }
+
+      nav h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        align-items: center;
+      }
+    }
+
+    /* typewriter css */
+    .typewriter {
+      margin-top: 6px;
+      font-size: 1rem;
+      font-weight: 400;
+      display: block;
+
+
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid white;
+      width: 0;
+      animation: type 3s steps(24) infinite, blink 0.9s infinite;
+    }
+
+    @keyframes type {
+      0% {
+        width: 0;
+      }
+
+      50% {
+        width: 24ch;
+      }
+
+      70% {
+        width: 24ch;
+      }
+
+      100% {
+        width: 0;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+    @media (max-width: 768px) {
+  .typewriter {
+    font-size: 0.9rem;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="cdx.jpeg" alt="image" />
+        <h1>Md Sameer<br> Alam
+          <span class="typewriter">Frontend Web Developer</span>
+        </h1>
+      </div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm a curious and enthusiastic coder who loves turning ideas into reality. With a solid base in C, C++, and
+      Python, plus hands-on experience in building websites using HTML, CSS, and JavaScript, I enjoy crafting clean and
+      responsive designs that work smoothly on any device. I’m also learning Oracle SQL and fundamentals of DSA to solve
+      problems more efficiently. Always eager to explore new tech and take on challenges.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education">
+      <div class="edu-card">
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+        <p><strong>Maulana Mazharul Haque Arabic & Persian University | 2022-2025</strong></p>
+        <p>Focused on programming, databases, web development, and computer networks.</p>
+      </div>
+      <div class="edu-card">
+        <h3>Intermediate (12th Grade)</h3>
+        <p><strong>Mohammedan Anglo Arabic Senior Secondary School | 2021</strong></p>
+        <p>Completed with specialization in Commerce.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>My Profile Card</h3>
+        <p>A responsive profile card built using HTML, CSS . View live demo:.</p>
+        <a href="https://sameer69gb.github.io/My-Profile-Card/" target="blank" class="project-link">Live demo</a>
+        <a href="https://github.com/Sameer69gb/My-Profile-Card" target="_blank" class="project-link">View Code</a>
+      </div>
+      <div class="project-card">
+        <h3>My Portfolio Website</h3>
+        <p>A personal portfolio website built with HTML & CSS showcasing my skills, education, and projects.</p>
+        <a href="https://my-portfolio-six-theta-71.vercel.app/" target="_blank" class="project-link"
+          onclick="alert('You are already inside! 🚀');">Live demo</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>C</li>
+      <li>C++</li>
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Fundamentals of DSA</li>
+      <li>Oracle SQL (Basic)</li>
+      <li>Responsive Design</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      <a href="mailto:sameersam2978@gmail.com" target="_blank" class="contact-link">
+        <img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000" alt="mail">
+        sameersam2978@gmail.com
+      </a>
+    </p>
+
+    <p>
+      <a href="https://www.linkedin.com/in/md-sameer-alam-089487369/" target="_blank" class="contact-link">
+        <img src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000" alt="linkedin">
+        LinkedIn
+      </a>
+    </p>
+
+    <p>
+      <a href="https://www.instagram.com/mdsameer.alam.2978/?hl=en" target="_blank" class="contact-link">
+        <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" alt="insta">
+        Instagram
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Md Sameer Alam. All rights reserved.</p>
+    <div class="social-link">
+      <a href="https://github.com/Sameer69gb" target="_blank">
+        <img src="https://img.icons8.com/?size=100&id=12599&format=png&color=ffffff" alt="github">
+      </a>
+      <a href="https://www.linkedin.com/in/md-sameer-alam-089487369/" target="_blank">
+        <img src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=ffffff" alt="linkedin">
+      </a>
+      <a href="https://www.instagram.com/mdsameer.alam.2978/?hl=en" target="_blank">
+        <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=ffffff" alt="insta">
+      </a>
+    </div>
+  </footer>
+  <button class="resume"
+    onclick="window.open('https://drive.google.com/uc?export=download&id=180V5uR2vKoMxwR9am_OBOvwN5sxx0RXJ')">
+    Resume ⬇️
+  </button>
+</body>
+
+</html>
