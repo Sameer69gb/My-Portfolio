@@ -17,19 +17,21 @@
       padding: 0;
       box-sizing: border-box;
     }
-    html {
-  scroll-behavior: smooth;
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     body {
       font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
@@ -363,12 +365,12 @@
         border-color: transparent;
       }
     }
-    @media (max-width: 768px) {
-  .typewriter {
-    font-size: 0.9rem;
-  }
-}
 
+    @media (max-width: 768px) {
+      .typewriter {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 
@@ -428,6 +430,13 @@
         <p>A personal portfolio website built with HTML & CSS showcasing my skills, education, and projects.</p>
         <a href="https://my-portfolio-six-theta-71.vercel.app/" target="_blank" class="project-link"
           onclick="alert('You are already inside! 🚀');">Live demo</a>
+      </div>
+      <div class="project-card">
+        <h3>AI Chatbot</h3>
+        <p>A real-time AI chatbot built with Python & Flask, powered by Groq API running LLaMA 3.3 70B — deployed on
+          Render & Vercel</p>
+        <a href="https://chatbot-lake-ten-53.vercel.app" target="_blank" class="project-link">Live Demo</a>
+        <a href="https://github.com/Sameer69gb/chatbot" target="_blank" class="project-link">GitHub</a>
       </div>
     </div>
   </section>
@@ -490,16 +499,17 @@
   </button>
 </body>
 <script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, { threshold: 0.2 });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
 
-document.querySelectorAll(".reveal").forEach(el => {
-  observer.observe(el);
-});
+  document.querySelectorAll(".reveal").forEach(el => {
+    observer.observe(el);
+  });
 </script>
+
 </html>
