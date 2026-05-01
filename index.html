@@ -17,6 +17,19 @@
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+  scroll-behavior: smooth;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
     body {
       font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
@@ -377,8 +390,7 @@
       </ul>
     </nav>
   </header>
-
-  <section id="about">
+  <section id="about" class="reveal">
     <h2>About Me</h2>
     <p>I'm a curious and enthusiastic coder who loves turning ideas into reality. With a solid base in C, C++, and
       Python, plus hands-on experience in building websites using HTML, CSS, and JavaScript, I enjoy crafting clean and
@@ -386,7 +398,7 @@
       problems more efficiently. Always eager to explore new tech and take on challenges.</p>
   </section>
 
-  <section id="education">
+  <section id="education" class="reveal">
     <h2>Education</h2>
     <div class="education">
       <div class="edu-card">
@@ -402,7 +414,7 @@
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="reveal">
     <h2>Projects</h2>
     <div class="projects">
       <div class="project-card">
@@ -420,7 +432,7 @@
     </div>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="reveal">
     <h2>Skills</h2>
     <ul class="skills-list">
       <li>C</li>
@@ -434,7 +446,7 @@
     </ul>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="reveal">
     <h2>Contact</h2>
     <p>
       <a href="mailto:sameersam2978@gmail.com" target="_blank" class="contact-link">
@@ -451,9 +463,9 @@
     </p>
 
     <p>
-      <a href="https://www.instagram.com/mdsameer.alam.2978/?hl=en" target="_blank" class="contact-link">
-        <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" alt="insta">
-        Instagram
+      <a href="https://github.com/Sameer69gb" target="_blank" class="contact-link">
+        <img src="https://cdn-icons-png.flaticon.com/128/4926/4926625.png" alt="insta">
+        Github
       </a>
     </p>
   </section>
@@ -477,5 +489,17 @@
     Resume ⬇️
   </button>
 </body>
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
 
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
+</script>
 </html>
